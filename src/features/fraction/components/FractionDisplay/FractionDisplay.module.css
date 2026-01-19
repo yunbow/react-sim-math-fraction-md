@@ -1,0 +1,58 @@
+.fraction {
+  --fraction-color: var(--color-text);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fraction-color);
+  transition: transform var(--transition-fast);
+}
+
+.highlighted {
+  transform: scale(1.1);
+}
+
+.numerator,
+.denominator {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  margin: 2px 0;
+}
+
+/* Sizes */
+.small .numerator,
+.small .denominator {
+  font-size: var(--font-size-lg);
+}
+
+.small .line {
+  min-width: 20px;
+}
+
+.medium .numerator,
+.medium .denominator {
+  font-size: var(--font-size-2xl);
+}
+
+.medium .line {
+  min-width: 30px;
+  height: 3px;
+  margin: 4px 0;
+}
+
+.large .numerator,
+.large .denominator {
+  font-size: var(--font-size-3xl);
+}
+
+.large .line {
+  min-width: 40px;
+  height: 4px;
+  margin: 6px 0;
+}

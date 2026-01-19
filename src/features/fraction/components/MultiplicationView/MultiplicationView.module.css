@@ -1,0 +1,97 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  gap: 0;
+  background-color: var(--color-grid-border);
+  border: 2px solid var(--color-unit-frame);
+  transition: opacity var(--transition-normal);
+}
+
+.cell {
+  transition: all var(--transition-normal);
+  animation: cellAppear 0.3s ease-out forwards;
+  opacity: 0;
+  border: 1px solid var(--color-grid-border);
+}
+
+@keyframes cellAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cell States */
+.empty {
+  background-color: var(--color-grid-empty);
+}
+
+.filled {
+  background-color: var(--color-grid-filled);
+}
+
+.overlap {
+  background-color: var(--color-grid-overlap);
+  animation: cellAppear 0.3s ease-out forwards, pulseResult 1.5s ease-in-out 0.3s infinite;
+}
+
+@keyframes pulseResult {
+  0%, 100% {
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.highlighting {
+  background-color: var(--color-secondary);
+  opacity: 0.7;
+}
+
+/* Division lines */
+.verticalLines,
+.horizontalLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.divisionLine {
+  position: absolute;
+  background-color: var(--color-unit-frame);
+  opacity: 0.5;
+}
+
+.divisionLine:not(.horizontal) {
+  width: 2px;
+  top: 0;
+}
+
+.divisionLine.horizontal {
+  height: 2px;
+  left: 0;
+}
+
+/* Result label */
+.resultLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-grid-overlap);
+  white-space: nowrap;
+}

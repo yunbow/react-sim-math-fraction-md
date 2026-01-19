@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+/* Card flip animation */
+.cardContainer {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border: 2px solid var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: var(--color-bg);
+  border: 3px solid var(--color-secondary);
+}
+
+.reciprocalLabel {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-secondary);
+  color: white;
+  font-size: var(--font-size-sm);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+/* Step arrows */
+.stepArrow {
+  position: absolute;
+  right: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.stepText {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.arrow {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Visual bar */
+.visualContainer {
+  margin-top: var(--spacing-md);
+}
+
+.unitBar {
+  position: relative;
+  border: 3px solid var(--color-unit-frame);
+  background: var(--color-unit-frame-bg);
+  border-radius: var(--radius-sm);
+}
+
+.unitLabel {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-unit-frame);
+}
+
+.divisorBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.segment {
+  height: 100%;
+  border-right: 1px solid var(--color-grid-border);
+  background: var(--color-grid-empty);
+  transition: all var(--transition-normal);
+}
+
+.segment:last-child {
+  border-right: none;
+}
+
+.segment.filled {
+  background: var(--color-grid-filled);
+}
+
+.segment.expanding {
+  animation: expand 0.5s ease-out forwards;
+  background: var(--color-accent);
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Description */
+.description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  font-weight: 500;
+  text-align: center;
+  transition: opacity var(--transition-normal);
+}
+
+/* Formula */
+.formula {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,76 @@
+.grid {
+  display: grid;
+  gap: 1px;
+  background-color: var(--color-grid-border);
+  border: 1px solid var(--color-grid-border);
+}
+
+.cell {
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal) ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cell States */
+.empty {
+  background-color: var(--color-grid-empty);
+}
+
+.filled {
+  background-color: var(--color-grid-filled);
+}
+
+.overlap {
+  background-color: var(--color-grid-overlap);
+  animation: pulseOverlap 1s ease-in-out infinite;
+}
+
+@keyframes pulseOverlap {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.highlighting {
+  background-color: var(--color-grid-highlighting);
+  animation: highlight 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes highlight {
+  from {
+    background-color: var(--color-grid-highlighting);
+  }
+  to {
+    background-color: #f39c12;
+  }
+}
+
+.reducing {
+  background-color: var(--color-grid-reducing);
+  animation: reduce 0.3s ease-out;
+}
+
+@keyframes reduce {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,23 @@
+.unitFrame {
+  position: relative;
+  border: 3px solid var(--color-unit-frame);
+  background-color: var(--color-unit-frame-bg);
+  border-radius: var(--radius-sm);
+}
+
+.label {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-unit-frame);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}

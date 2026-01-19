@@ -1,0 +1,84 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #4a90d9;
+  --color-primary-light: #6ba3e3;
+  --color-primary-dark: #3a7bc8;
+
+  /* Secondary Colors */
+  --color-secondary: #e8744f;
+  --color-secondary-light: #f08a6a;
+  --color-secondary-dark: #d65a32;
+
+  /* Accent Colors */
+  --color-accent: #50c878;
+  --color-accent-light: #6fd492;
+  --color-accent-dark: #3cb55e;
+
+  /* Grid Colors */
+  --color-grid-empty: #f5f5f5;
+  --color-grid-filled: #4a90d9;
+  --color-grid-filled-second: #e8744f;
+  --color-grid-overlap: #9b59b6;
+  --color-grid-highlighting: #f1c40f;
+  --color-grid-reducing: #e74c3c;
+  --color-grid-border: #ddd;
+
+  /* Background Colors */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #e9ecef;
+
+  /* Text Colors */
+  --color-text: #333333;
+  --color-text-secondary: #666666;
+  --color-text-light: #999999;
+
+  /* Unit Frame */
+  --color-unit-frame: #888888;
+  --color-unit-frame-bg: rgba(200, 200, 200, 0.1);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Font */
+  --font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}

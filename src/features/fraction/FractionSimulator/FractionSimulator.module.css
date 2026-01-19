@@ -1,0 +1,154 @@
+.simulator {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+/* Problem Display */
+.problemSection {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.problemDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.fractionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.operator {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-text);
+  padding: 0 var(--spacing-md);
+}
+
+/* Narration */
+.narrationSection {
+  min-height: 70px;
+}
+
+/* Visualization */
+.visualizationSection {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.fractionFrames {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-end;
+}
+
+.frameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.frameLabel {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.fractionBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: height var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* Dotted division lines */
+.divisionLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.divisionLine {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 0;
+  border-top: 2px dashed var(--color-unit-frame);
+  opacity: 0.6;
+}
+
+.multiplicationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* Control Panel */
+.controlSection {
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .simulator {
+    padding: var(--spacing-md);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .problemDisplay {
+    gap: var(--spacing-md);
+  }
+
+  .operator {
+    font-size: var(--font-size-2xl);
+  }
+
+  .fractionFrames {
+    flex-direction: column;
+    align-items: center;
+  }
+}
